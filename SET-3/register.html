@@ -8,10 +8,12 @@
         *{
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:white;
         }
         body{
             margin:0;
             padding:0;
+            background-color: black;
         }
         main{
             display: flex;
@@ -25,7 +27,8 @@
             height: auto;
             width:95%;
             max-width:400px;
-            box-shadow: 1px -1px 10px 1px rgb(199, 199, 199);
+            box-shadow: 0px 0px 15px 0.5px  rgb(0, 166, 255);
+            border-radius:30px;
         }
         .form input{
             font-size: 17px;
@@ -37,6 +40,7 @@
             margin:20px 0px;
             border:none;
             border-bottom:3px solid rgb(0, 166, 255);
+            background-color: transparent;
         }
         .form input:focus {
         outline: none;
@@ -46,9 +50,21 @@
             text-align: center;
             margin-bottom: 50px;
         }
+        .form p{
+            padding-top:30px;
+            color:white;
+            text-align:center;
+        }
+        .form p a{
+            color:rgba(0,166,255);
+            text-decoration: none;
+        }
+        .form p a:hover{
+            text-decoration: underline;
+        }
         .submitbtn{
-            margin-top:40px;
-            background-color:rgba(0,166,255);
+            margin:40px 0px;
+            background-color:rgba(0,166,255) !important;
             color:white;
             font-size:18px;
             border-radius:15px;
@@ -67,6 +83,9 @@
             <input type="text" name="username" id="" placeholder="username" required>
             <input type="password" name="password" id="" placeholder="password" required><br>
             <input type="submit" value="Register" class="submitbtn">
+            <p>Already Have An Account ? 
+                <a href="login.html">Login Now</a>
+            </p>
         </div>
     </main>
 </body>
