@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload And Download</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            margin:0;
+            padding:0;
+            background-color: #005f9a;
+        }
+        .container{
+            display: flex;
+            min-height: 100vh;
+            min-width:100vw;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container button{
+            position: relative;
+            margin:30px;
+            height:50px;
+            width:250px;
+        }
+        .container button:hover{
+            cursor: pointer;
+            width:245px;
+            height:49px;
+        }
+        .upload{
+            background-color:#009EFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+            color:white;
+            font-size: 20px;
+            border-radius:10px;
+            border:none;
+            box-shadow:1px 5px 10px 1px rgb(12, 32, 83);
+        }
+        .download{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+            font-size: 20px;
+            border-radius:10px;
+            border:none;
+            color:#009EFF;
+            box-shadow:1px 5px 10px 1px rgb(3, 38, 63);
+        }
+        button::after , button::before{
+            content: "";
+            height:40%;
+            width:6px;
+            background-color: white;
+            right:-0.1px;
+            position: absolute;
+            border-radius:10px;
+        }
+        button::before{
+            left:-0.1px;
+        }
+        .download::after , .download::before{
+            background-color:#009EFF;
+        }
+        .upload img , .download img{
+            width:30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="upload"><img src="upload.png" alt="">Upload</button>
+        <button class="download"><img src="download.png" alt=""> Download</button>
+    </div>
+</body>
+</html>
