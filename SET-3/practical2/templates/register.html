@@ -79,14 +79,23 @@
     <main>
         <form class="form" method="post">
             <h1>Register Now</h1>
+             
             <input type="text" name="name" id="" placeholder="username" required>
             <input type="email" name="email" id="" placeholder="email" required>
             <input type="password" name="password" id="" placeholder="password" required>
             <input style="margin-top:0px" type="password" name="re-password" id="" placeholder="Re Enter password" required><br>
             <input type="submit" value="Register" class="submitbtn">
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <p style="margin-top:10px;">{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+            {% endwith %}
             <p>Already Have An Account ? 
                 <a href="login.html">Login Now</a>
             </p>
+
         </form>
     </main>
 </body>

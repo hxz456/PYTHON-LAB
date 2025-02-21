@@ -1,7 +1,15 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,flash
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+app.config["SECRET_KEY"] = "sdfDFBGFNFGHFGDf"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
+
+db = SQLAlchemy(app)
+
+class Users(db.Model):
+    id = db.Column(db.Integer)
 @app.route("/",methods=["GET","POST"])
 def home():
 
@@ -12,9 +20,10 @@ def home():
         re_password = request.form['re-password']
 
         if password == re_password:
-            print("success")
+            flash("Registered Successfully")
         else:
-            print("password not matched")
+            flash("password not matched" , category="error")
+
         print(request.form)
     return render_template("register.html")
 
